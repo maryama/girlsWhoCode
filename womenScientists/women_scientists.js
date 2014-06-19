@@ -49,5 +49,8 @@ function onScientistLoad() {
 
 // when the page is loaded,  grab a random female scientist to query about
 window.onload = function () {
-  getRandomScientist()
+  document.getElementById("catButton").onclick = function() {
+
+    getRandomScientist();
+  };
 };

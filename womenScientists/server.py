@@ -40,7 +40,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     try:
       index = string.index(inputUrl, "random") + 6
       randomParam = inputUrl[index:]
-      scientists = open("women_scientists.txt", 'r').readlines()
+      scientists = open("C:\Users\ASUS 1\Documents\GitHub\girlsWhoCode\womenScientists\women_scientists.txt", 'r').readlines()
       size = len(scientists)
       fileIndex = random.randint(0, size)
       scientist = scientists[fileIndex]
@@ -48,7 +48,8 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
       response = json.dumps(scientist)
       s.wfile.write(response)
 
-    except:
+    except Exception as e:
+      print e.message
       print "no female scientist requested"
 
     try:
